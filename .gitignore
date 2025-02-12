@@ -219,4 +219,6 @@ tests/provision/*
 grafana/*
 !grafana/provisioning/
 !grafana/dashboards/
-superset/shared-db/db2
+superset/shared-db/
+superset/dbs/
+keepdemo.db.backup

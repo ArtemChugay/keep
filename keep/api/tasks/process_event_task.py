@@ -711,6 +711,16 @@ def __save_error_alerts(
             raw_events = [raw_events]
 
         logger.info(f"Saving {len(raw_events)} error alerts")
+        # debug:
+        if len(raw_events) > 5:
+            logger.info(
+                "First 5 error alerts",
+                extra={
+                    "tenant_id": tenant_id,
+                    "raw_events": raw_events,
+                },
+            )
+
         for raw_event in raw_events:
             # Convert AlertDto to dict if needed
             if isinstance(raw_event, AlertDto):
@@ -718,7 +728,7 @@ def __save_error_alerts(
                 raw_event = raw_event.dict()
 
             # TODO: change to debug
-            logger.info(
+            logger.debug(
                 "Creating AlertRaw object",
                 extra={
                     "tenant_id": tenant_id,

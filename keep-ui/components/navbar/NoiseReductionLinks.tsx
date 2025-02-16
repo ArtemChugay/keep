@@ -2,7 +2,7 @@
 
 import { Subtitle } from "@tremor/react";
 import { LinkWithIcon } from "components/LinkWithIcon";
-import { Mapping, Rules, Workflows, ExportIcon } from "components/icons";
+import { Mapping, Rules, ExportIcon } from "components/icons";
 import { Session } from "next-auth";
 import { Disclosure } from "@headlessui/react";
 import { IoChevronUp } from "react-icons/io5";
@@ -50,11 +50,6 @@ export const NoiseReductionLinks = ({ session }: NoiseReductionLinksProps) => {
           </LinkWithIcon>
         </li>
         <li>
-          <LinkWithIcon href="/workflows" icon={Workflows}>
-            <Subtitle>Workflows</Subtitle>
-          </LinkWithIcon>
-        </li>
-        <li>
           <LinkWithIcon
             href="/topology"
             icon={TbTopologyRing}
@@ -84,7 +79,7 @@ export const NoiseReductionLinks = ({ session }: NoiseReductionLinksProps) => {
         <li>
           <AILink></AILink>
         </li>
-    </Disclosure.Panel>
+      </Disclosure.Panel>
     </Disclosure>
   );
 };
